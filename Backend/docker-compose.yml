@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    container_name: kitaab-ghar-backend
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=test
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+  mongo-data:
+    driver: local
