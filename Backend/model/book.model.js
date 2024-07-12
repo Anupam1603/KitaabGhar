@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 
 //Defining a Schema
 const bookSchema = mongoose.Schema({
+
     name:String,
     price:Number,
     category:String,
-    iamge:String,
+    image:String,
     title:String
 })
 
